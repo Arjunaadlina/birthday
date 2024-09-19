@@ -1,0 +1,163 @@
+*,html {
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #000000 0%, #1a237e 100%);
+    overflow: hidden;
+}
+
+.card {
+    position: relative;
+    width: 500px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(15px) brightness(1.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0px 16px rgba(28, 132, 206, 0.35);
+    text-align: center;
+    color: white;
+    animation: float 8s ease-in-out infinite;
+    z-index: 10;
+    display: flex;
+    gap: 16px;
+}
+
+.container-image {
+    width: 250px;
+    height: 300px;
+    border-radius : 12px;
+    overflow : hidden;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.container-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container-text {
+    text-align: start;
+    width: 100%;
+}
+
+.card h1 {
+    font-size: 24px;
+    margin: 0 0 16px;
+}
+
+.card p {
+    font-size: 14px;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.balloon {
+    position: absolute;
+    bottom: -100px;
+    width: 50px;
+    height: 80px;
+    background: red;
+    border-radius: 50%;
+    animation: rise 8s infinite ease-in-out;
+}
+
+.balloon::before {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background: white;
+}
+
+@keyframes rise {
+    0% {
+        bottom: -100px;
+        opacity: 1;
+    }
+    100% {
+        bottom: 120vh;
+        opacity: 0;
+    }
+}
+
+.balloon:nth-child(1) {
+    left: 5%;
+    background: #FF6B6B;
+    animation-duration: 5s;
+}
+
+.balloon:nth-child(2) {
+    left: 20%;
+    background: #FFD93D;
+    animation-duration: 7s;
+}
+
+.balloon:nth-child(3) {
+    left: 35%;
+    background: #4BCFFA;
+    animation-duration: 6s;
+}
+
+.balloon:nth-child(4) {
+    left: 50%;
+    background: #FF8C00;
+    animation-duration: 8s;
+}
+
+.balloon:nth-child(5) {
+    left: 65%;
+    background: #8E44AD;
+    animation-duration: 6.5s;
+}
+
+.balloon:nth-child(6) {
+    left: 80%;
+    background: #27AE60;
+    animation-duration: 7.5s;
+}
+
+.balloon:nth-child(7) {
+    left: 95%;
+    background: #3498DB;
+    animation-duration: 6.2s;
+}
+
+.message {
+    position: absolute;
+    bottom: 50px;
+    color: #fff;
+    font-size: 20px;
+    animation: fade-in 3s ease-in-out infinite alternate;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.sender {
+    font-weight: bold;
+}
